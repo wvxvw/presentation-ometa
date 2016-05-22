@@ -42,6 +42,12 @@
 
 * How?
 
+** Schema
+   | name    | matcher and parameters     | translation |
+   |---------+----------------------------+-------------|
+   | num ::= | ~(0/1/2/3/4/5/6/7/8/9)*~:n | n           |
+   | sum ::= | <num>:a ~+~ <num>:b =>     | (+ a b)     |
+
 ** Implementation
    - Unambiguous parsing (PEG vs LR/LL).
    - Grammars as objects: inheritance, composition.

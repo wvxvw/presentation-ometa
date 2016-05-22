@@ -1,4 +1,4 @@
-% Created 2016-05-22 Sun 04:06
+% Created 2016-05-22 Sun 09:59
 \documentclass[presentation,10pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -56,7 +56,18 @@ do you make a language whose power transcends that of FlooP?
 \section{How?}
 \label{sec-2}
 
-\begin{frame}[fragile,label=sec-2-1]{Implementation}
+\begin{frame}[fragile,label=sec-2-1]{Schema}
+ \begin{center}
+\begin{tabular}{lll}
+name & matcher and parameters & translation\\
+\hline
+num ::= & \verb~(0/1/2/3/4/5/6/7/8/9)*~:n & n\\
+sum ::= & <num>:a \verb~+~ <num>:b => & (+ a b)\\
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile,label=sec-2-2]{Implementation}
  \begin{itemize}
 \item Unambiguous parsing (PEG vs LR/LL).
 \item Grammars as objects: inheritance, composition.
@@ -65,7 +76,7 @@ do you make a language whose power transcends that of FlooP?
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=sec-2-2]{Compared to macros}
+\begin{frame}[label=sec-2-3]{Compared to macros}
 \begin{itemize}
 \item Hygiene vs scope management.
 \item Structured reader-macros.
@@ -73,7 +84,7 @@ do you make a language whose power transcends that of FlooP?
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=sec-2-3]{Compared to compiler compilers}
+\begin{frame}[label=sec-2-4]{Compared to compiler compilers}
 \begin{itemize}
 \item Full access to the underlying programming language.
 \item No need for lexers.
@@ -82,7 +93,7 @@ do you make a language whose power transcends that of FlooP?
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=sec-2-4]{Compared to DCG (Prolog)}
+\begin{frame}[label=sec-2-5]{Compared to DCG (Prolog)}
 \begin{itemize}
 \item Polymorphism due to OO features.
 \item Meta-rules in Prolog may be more expressive.
