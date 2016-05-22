@@ -1,0 +1,83 @@
+#+TITLE:     OMeta Language
+#+AUTHOR:    Oleg Sivokon
+#+EMAIL:     olegsivokon@gmail.com
+#+DATE:      <2016-05-22 Sun>
+#+DESCRIPTION: Brief Description Of OMeta Language
+#+KEYWORDS: OMeta parser combinator compiler language
+#+LANGUAGE:  en
+#+OPTIONS: H:2 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,10pt]
+#+BEAMER_THEME: Bergen
+#+BEAMER_COLOR_THEME: spruce
+#+BEAMER_FONT_THEME: structurebold
+
+#+BEGIN_SRC emacs-lisp :exports none
+  (setq org-latex-pdf-process
+        '("xelatex -interaction nonstopmode -output-directory %o %f"
+          "xelatex -interaction nonstopmode -output-directory %o %f"
+          "xelatex -interaction nonstopmode -output-directory %o %f")
+        org-latex-with-hyperref nil)
+  ""
+#+END_SRC
+
+#+RESULTS:
+
+* Why?
+  
+** Dedication
+   #+BEGIN_QUOTE
+   Yes, but what is GlooP? If FlooP is BlooP unchained, then GlooP must
+   be FlooP unchained. But how can you take the chains off twice? How
+   do you make a language whose power transcends that of FlooP?
+   
+   -- *Douglas R. Hofstadter. Gödel, Esher, Bach: An Eternal Golden Braid*
+   #+END_QUOTE
+   
+** Goals
+   - Short and concise description of a program.
+   - Minimalistic framework for writing compilers.
+   - Extending existing languages.
+
+* How?
+
+** Implementation
+   - Unambiguous parsing (PEG vs LR/LL).
+   - Grammars as objects: inheritance, composition.
+   - Parametrized rules.
+   - Rules with free-style handlers (vs =visitor= pattern).
+
+** Compared to macros
+   - Hygiene vs scope management.
+   - Structured reader-macros.
+   - No need for symbol-macors and macrolets.
+
+** Compared to compiler compilers
+   - Full access to the underlying programming language.
+   - No need for lexers.
+   - No shift-reduce conflicts.
+   - Meta rules.
+
+** Compared to DCG (Prolog)
+   - Polymorphism due to OO features.
+   - Meta-rules in Prolog may be more expressive.
+
+* Who?
+
+** Credits and links
+   - Developed at [[http://vpri.org/index.html][Viewpoints Research Institute]] by Alessandro Warth
+     and Ian Piumarta.
+   - Original implementation in SmallTalk.
+   - Implementations for experimental languages like Cola.
+
+** Industrial implementations
+   - C# :: [[http://ometasharp.codeplex.com/Wikipage][ometasharp.codeplex.com/Wikipage]].
+   - C# :: [[http://ironmeta.sourceforge.net/][ironmeta.sourceforge.net/]].
+   - Python :: [[https://launchpad.net/pymeta][launchpad.net/pymeta]]
+   - Python :: [[http://www.allbuttonspressed.com/projects/pymeta][www.allbuttonspressed.com/projects/pymeta]]
+   - Ruby :: [[http://github.com/aquasync/ruby-ometa/tree/master][github.com/aquasync/ruby-ometa]]
+   - JavaScript :: [[https://github.com/alexwarth/ometa-js][github.com/alexwarth/ometa-js]]
+   - Scheme :: [[http://www.lshift.net/blog/2008/07/01/ometa-for-scheme][www.lshift.net/blog/2008/07/01/ometa-for-scheme]]
+   - Common Lisp :: [[http://subvert-the-dominant-paradigm.net/blog/?p%3D23][subvert-the-dominant-paradigm.net/blog/?p=23]]
+   - Clojure (not quite) :: [[https://github.com/ericnormand/squarepeg][github.com/ericnormand/squarepeg]]

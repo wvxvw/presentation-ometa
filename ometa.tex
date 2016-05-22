@@ -1,0 +1,118 @@
+% Created 2016-05-22 Sun 04:06
+\documentclass[presentation,10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage[hidelinks]{hyperref}
+\tolerance=1000
+\usepackage[utf8]{inputenc}
+\usetheme{Bergen}
+\usecolortheme{spruce}
+\usefonttheme{structurebold}
+\author{Oleg Sivokon}
+\date{\textit{<2016-05-22 Sun>}}
+\title{OMeta Language}
+\begin{document}
+
+\maketitle
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+\section{Why?}
+\label{sec-1}
+
+\begin{frame}[label=sec-1-1]{Dedication}
+\begin{quote}
+Yes, but what is GlooP? If FlooP is BlooP unchained, then GlooP must
+be FlooP unchained. But how can you take the chains off twice? How
+do you make a language whose power transcends that of FlooP?
+
+-- \alert{Douglas R. Hofstadter. Gödel, Esher, Bach: An Eternal Golden Braid}
+\end{quote}
+\end{frame}
+
+\begin{frame}[label=sec-1-2]{Goals}
+\begin{itemize}
+\item Short and concise description of a program.
+\item Minimalistic framework for writing compilers.
+\item Extending existing languages.
+\end{itemize}
+\end{frame}
+
+\section{How?}
+\label{sec-2}
+
+\begin{frame}[fragile,label=sec-2-1]{Implementation}
+ \begin{itemize}
+\item Unambiguous parsing (PEG vs LR/LL).
+\item Grammars as objects: inheritance, composition.
+\item Parametrized rules.
+\item Rules with free-style handlers (vs \texttt{visitor} pattern).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-2-2]{Compared to macros}
+\begin{itemize}
+\item Hygiene vs scope management.
+\item Structured reader-macros.
+\item No need for symbol-macors and macrolets.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-2-3]{Compared to compiler compilers}
+\begin{itemize}
+\item Full access to the underlying programming language.
+\item No need for lexers.
+\item No shift-reduce conflicts.
+\item Meta rules.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-2-4]{Compared to DCG (Prolog)}
+\begin{itemize}
+\item Polymorphism due to OO features.
+\item Meta-rules in Prolog may be more expressive.
+\end{itemize}
+\end{frame}
+
+\section{Who?}
+\label{sec-3}
+
+\begin{frame}[label=sec-3-1]{Credits and links}
+\begin{itemize}
+\item Developed at \href{http://vpri.org/index.html}{Viewpoints Research Institute} by Alessandro Warth
+and Ian Piumarta.
+\item Original implementation in SmallTalk.
+\item Implementations for experimental languages like Cola.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label=sec-3-2]{Industrial implementations}
+\begin{description}
+\item[{C\#}] \href{http://ometasharp.codeplex.com/Wikipage}{ometasharp.codeplex.com/Wikipage}.
+\item[{C\#}] \href{http://ironmeta.sourceforge.net/}{ironmeta.sourceforge.net/}.
+\item[{Python}] \href{https://launchpad.net/pymeta}{launchpad.net/pymeta}
+\item[{Python}] \href{http://www.allbuttonspressed.com/projects/pymeta}{www.allbuttonspressed.com/projects/pymeta}
+\item[{Ruby}] \href{http://github.com/aquasync/ruby-ometa/tree/master}{github.com/aquasync/ruby-ometa}
+\item[{JavaScript}] \href{https://github.com/alexwarth/ometa-js}{github.com/alexwarth/ometa-js}
+\item[{Scheme}] \href{http://www.lshift.net/blog/2008/07/01/ometa-for-scheme}{www.lshift.net/blog/2008/07/01/ometa-for-scheme}
+\item[{Common Lisp}] \href{http://subvert-the-dominant-paradigm.net/blog/?p\%3D23}{subvert-the-dominant-paradigm.net/blog/?p=23}
+\item[{Clojure (not quite)}] \href{https://github.com/ericnormand/squarepeg}{github.com/ericnormand/squarepeg}
+\end{description}
+\end{frame}
+% Emacs 25.1.50.2 (Org mode 8.2.10)
+\end{document}
